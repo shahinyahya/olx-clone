@@ -1,0 +1,120 @@
+.header {
+  height: 60px;
+  background-color: #002f341c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 1px 4px 0 rgb(0 0 0 / 10%);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.location__input {
+  border: 2px solid #002f34;
+  padding: 0.5rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.location__input input {
+  border: none;
+  outline: none;
+}
+
+.location__input input::placeholder {
+  font-size: 15px;
+}
+
+.arrow-down {
+  font-size: 25px;
+}
+
+.search__input {
+  border: 2px solid #002f34;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+  width: 550px;
+  height: 2.7rem;
+}
+
+.search__input input {
+  width: 100%;
+  padding-left: 5px;
+  outline: none;
+  border: none;
+}
+
+.search__input input::placeholder {
+  font-size: 15px;
+}
+
+.search-btn {
+  height: 2.6rem;
+  width: 2.8rem;
+}
+
+.search-btn button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: #002f34;
+  color: white;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.language p {
+  font-size: 14px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+}
+
+.login p {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.underline {
+  background-color: #002f34;
+  width: 38px;
+  height: 2px;
+  border-radius: 25px;
+}
+
+.sell__btn button {
+  border-radius: 25px;
+  padding: 0.55rem;
+  display: flex;
+  align-items: center;
+  border-top: 4px solid #23e5db;
+  border-bottom: 4px solid #3a77ff;
+  border-left: 4px solid #ffce32;
+  border-right: 4px solid #3a77ff;
+  background-color: #fff;
+  font-weight: 800;
+}
+
+.plus {
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+/* .bottom-bar__header {
+  height: 4px;
+  width: 100%;
+  background-color: #fff;
+} */

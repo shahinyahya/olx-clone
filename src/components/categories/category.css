@@ -1,0 +1,30 @@
+.categories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  margin-top: 5px;
+  box-shadow: 0 1px 4px 0 rgb(0 0 0 / 10%);
+  position: relative;
+  top: 60px;
+}
+
+.category-head {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  font-size: 21px;
+}
+
+.category-list ul {
+  display: flex;
+  gap: 1rem;
+  list-style-type: none;
+}
+
+.category-list ul li {
+  font-size: 14px;
+}

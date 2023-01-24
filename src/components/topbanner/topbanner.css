@@ -1,0 +1,22 @@
+.topbanner {
+  background-image: url("https://statics.olx.in/olxin/banners/hero_bg_in_v4@1x.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  top: 60px;
+  height: 140px;
+}
+
+.topbanner button {
+  padding: 0.8rem;
+  background-color: #002f34;
+  position: absolute;
+  left: 55%;
+  top: 45px;
+  border-radius: 5px;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
