@@ -116,3 +116,29 @@ h4 {
   font-size: 12px;
   color: rgba(1, 1, 1, 0.75);
 }
+
+.sign-up-container p {
+  font-size: 13px;
+  color: #002f34;
+  opacity: 0.75;
+  text-align: center;
+}
+
+.sign-up-button button {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #002f34;
+  color: white;
+  font-weight: 800;
+  height: 2.5rem;
+  margin-top: 1rem;
+}
+
+.sign-up-button button:hover {
+  background-color: transparent;
+  border: 2px solid #002f34;
+  color: #002f34;
+  cursor: pointer;
+}

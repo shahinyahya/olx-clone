@@ -1,0 +1,118 @@
+.signin-container,
+.overlay {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+}
+
+.overlay {
+  background-color: rgba(49, 49, 49, 0.8);
+}
+
+.closebtn {
+  display: none;
+}
+
+.signin__box {
+  overflow: hidden;
+  position: relative;
+  padding: 6.5rem 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+  gap: 2rem;
+  background-color: #fff;
+}
+
+.close-btn {
+  position: absolute;
+  left: 90%;
+  top: 5%;
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+h4 {
+  color: #002f34;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.email__input {
+  width: 300px;
+  border-radius: 5px;
+  border: 1px solid rgba(1, 1, 1, 0.4);
+}
+
+.password__input {
+  width: 300px;
+  border-radius: 5px;
+  border: 1px solid rgba(1, 1, 1, 0.4);
+}
+
+.email__input input {
+  width: 100%;
+  padding: 0.45rem;
+  background: transparent;
+  border: none;
+  border-radius: 5px;
+  height: 2.5rem;
+  outline: none;
+}
+
+.password__input input {
+  width: 100%;
+  border-radius: 5px;
+  padding: 0.45rem;
+  height: 2.5rem;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.email__input input:focus {
+  outline: 4px solid #002f34;
+  border: none;
+}
+
+.password__input input:focus {
+  outline: 4px solid #002f34;
+  border: none;
+}
+
+.signin-btn {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #002f34;
+  color: white;
+  font-weight: 800;
+  height: 2.5rem;
+}
+
+.signin-btn:hover {
+  background-color: transparent;
+  border: 2px solid #002f34;
+  color: #002f34;
+  cursor: pointer;
+}
+
+.message {
+  text-align: center;
+  max-width: 300px;
+  font-size: 12px;
+  color: rgba(1, 1, 1, 0.75);
+}
