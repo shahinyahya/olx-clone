@@ -1,17 +1,25 @@
-.signin-container {
+.signin-container,
+.overlay {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
 }
 
 .overlay {
   background-color: rgba(49, 49, 49, 0.8);
 }
 
+.closebtn {
+  display: none;
+}
+
 .signin__box {
+  overflow: hidden;
   position: relative;
   padding: 6.5rem 2.5rem;
   display: flex;

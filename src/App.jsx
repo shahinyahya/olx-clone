@@ -1,12 +1,12 @@
 import "./App.css";
-import Signin from "./components/signin/Signin";
 import Home from "./pages/Home";
+import Product from "./pages/Product";
 
 const App = () => {
   return (
     <>
-      <Home />
-      {/* <Signin /> */}
+      {/* <Home /> */}
+      <Product />
     </>
   );
 };

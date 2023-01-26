@@ -18,6 +18,10 @@ const Header = () => {
     setModal(!modal);
   };
 
+  if (modal) {
+    document.body.style.overflow = "hidden";
+  }
+
   return (
     <>
       <header className="header">
@@ -68,6 +72,7 @@ const Header = () => {
           </div>
         </nav>
       </header>
+      {modal && <Signin />}
     </>
   );
 };

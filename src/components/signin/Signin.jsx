@@ -4,16 +4,26 @@ import { useState } from "react";
 
 const Signin = () => {
   const [data, setData] = useState({});
+  const [show, setShow] = useState(true);
 
   const handleClick = (e) => {
     let inputData = { [e.target.name]: e.target.value };
     setData({ ...data, ...inputData });
   };
 
+  const toggleOff = () => {
+    setShow(!show);
+  };
+
+  if (!show) {
+    document.querySelector(".signin-container").style.display = "none";
+    document.body.style.overflow = "scroll";
+  }
+
   return (
-    <div className="signin-container overlay">
+    <div className={"signin-container overlay"}>
       <div className="signin__box">
-        <div className="close-btn">
+        <div className="close-btn" onClick={toggleOff}>
           <AiOutlineClose className="close" />
         </div>
         <div className="logo">
