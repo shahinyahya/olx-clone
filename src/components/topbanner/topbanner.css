@@ -3,9 +3,10 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  position: relative;
-  top: 60px;
+  /* position: relative; */
+  /* top: 60px; */
   height: 140px;
+  /* /* z-index: -99; */
 }
 
 .topbanner button {
@@ -13,7 +14,7 @@
   background-color: #002f34;
   position: absolute;
   left: 55%;
-  top: 45px;
+  top: 140px;
   border-radius: 5px;
   color: white;
   outline: none;

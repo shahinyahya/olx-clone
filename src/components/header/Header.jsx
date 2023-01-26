@@ -1,8 +1,23 @@
 import "./header.css";
 import { AiOutlineSearch, AiOutlinePlus } from "react-icons/ai";
 import { IoIosArrowDown } from "react-icons/io";
+import { useState } from "react";
+import Signin from "../signin/Signin";
 
 const Header = () => {
+  const [data, setData] = useState({});
+
+  const [modal, setModal] = useState(false);
+
+  const handleInput = (e) => {
+    let inputData = { [e.target.name]: e.target.value };
+    setData({ ...data, ...inputData });
+  };
+
+  const login = () => {
+    setModal(!modal);
+  };
+
   return (
     <>
       <header className="header">
@@ -20,6 +35,7 @@ const Header = () => {
               type="text"
               name="city"
               placeholder="Search City, Area or loc..."
+              onChange={handleInput}
             />
             <IoIosArrowDown className="arrow-down" />
           </div>
@@ -28,6 +44,7 @@ const Header = () => {
               type="text"
               name="search"
               placeholder="Find Cars, Mobile Phones, and more..."
+              onChange={handleInput}
             />
             <div className="search-btn">
               <button>
@@ -40,7 +57,7 @@ const Header = () => {
               ENGLISH <IoIosArrowDown className="arrow-down" />
             </p>
           </div>
-          <div className="login">
+          <div className="login" onClick={() => login()}>
             <p>Login</p>
             <div className="underline"></div>
           </div>
@@ -51,7 +68,6 @@ const Header = () => {
           </div>
         </nav>
       </header>
-      {/* <div className="bottom-bar__header"></div> */}
     </>
   );
 };
