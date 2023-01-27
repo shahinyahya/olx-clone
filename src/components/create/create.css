@@ -1,0 +1,73 @@
+.create-container {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-main_box {
+  border: 2px solid #002f34;
+  border-radius: 5px;
+  padding: 2rem;
+}
+
+.create-form__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  border-bottom: 1px solid rgba(1, 1, 1, 0.4);
+}
+
+.create-inputs label {
+  color: #002f34;
+  opacity: 0.95;
+}
+
+.create-inputs input {
+  padding: 0.45rem;
+  font-size: 18px;
+  outline: none;
+  border: none;
+}
+
+.upload-file__container {
+  padding-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.submit-btn__fill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem;
+  width: 100%;
+}
+
+.submit-btn__fill button {
+  width: 100%;
+  padding: 0.8rem 0;
+  border-radius: 5px;
+  background-color: #002f34;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: 250ms all ease-in;
+}
+
+.submit-btn__fill button:hover {
+  scale: 0.89;
+}
