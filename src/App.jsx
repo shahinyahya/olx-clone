@@ -1,12 +1,17 @@
 import "./App.css";
-import Create from "./components/create/Create";
 import Home from "./pages/Home";
+import Create from "./pages/Create";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const App = () => {
   return (
     <>
-      <Home />
-      {/* <Create /> */}
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/create" element={<Create />} />
+        </Routes>
+      </Router>
     </>
   );
 };

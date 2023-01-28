@@ -1,8 +1,11 @@
 import "./signup.css";
 import { AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const navigate = useNavigate();
+
   const [data, setData] = useState({});
   const [show, setShow] = useState(true);
 
@@ -13,6 +16,12 @@ const Signup = () => {
 
   const toggleOff = () => {
     setShow(!show);
+    navigate("/");
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(data);
   };
 
   if (!show) {
@@ -34,7 +43,7 @@ const Signup = () => {
           />
         </div>
         <h4>SignUp Form</h4>
-        <div className="form">
+        <form className="form" onSubmit={handleSubmit}>
           <div className="email__input">
             <input
               type="email"
@@ -66,7 +75,7 @@ const Signup = () => {
               to spam you in any way.
             </small>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );

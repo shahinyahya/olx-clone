@@ -3,8 +3,11 @@ import { AiOutlineSearch, AiOutlinePlus } from "react-icons/ai";
 import { IoIosArrowDown } from "react-icons/io";
 import { useState } from "react";
 import Signin from "../signin/Signin";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+
   const [data, setData] = useState({});
 
   const [modal, setModal] = useState(false);
@@ -16,6 +19,7 @@ const Header = () => {
 
   const login = () => {
     setModal(!modal);
+    navigate("#signin");
   };
 
   if (modal) {
