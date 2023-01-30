@@ -1,8 +1,15 @@
 import "./posts.css";
 import post from "../../postDataRaw";
-import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { AiOutlineHeart } from "react-icons/ai";
+import { useState } from "react";
 
 const Posts = () => {
+  const [toggleLike, setToggleLike] = useState(false);
+
+  const handleClick = () => {
+    setToggleLike(!toggleLike);
+  };
+
   return (
     <div className="posts__container">
       <p className="posts-head">Fresh Reccomendations</p>
@@ -12,7 +19,10 @@ const Posts = () => {
             <div className="post__card" key={data.id}>
               <div className="top-post__container">
                 <img src={data.image} alt="post" width="200" height="150" />
-                <AiOutlineHeart className="heart-icon" />
+                <AiOutlineHeart
+                  onClick={handleClick}
+                  className={toggleLike ? "heart-active" : "heart-icon"}
+                />
               </div>
               <div className="bottom-post__container">
                 <div className="price-details">

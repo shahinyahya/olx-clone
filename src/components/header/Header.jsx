@@ -18,8 +18,8 @@ const Header = () => {
   };
 
   const login = () => {
-    setModal(!modal);
-    navigate("#signin");
+    setModal((modal) => !modal);
+    navigate("/signin");
   };
 
   if (modal) {

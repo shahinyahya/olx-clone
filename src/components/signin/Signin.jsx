@@ -22,8 +22,8 @@ const Signin = () => {
   };
 
   const toggleSignUp = () => {
-    setShowReg(!showReg);
-    navigate("#signup");
+    setShowReg((showReg) => !showReg);
+    navigate("/signup");
   };
 
   const handleSubmit = (e) => {
@@ -69,21 +69,21 @@ const Signin = () => {
             />
           </div>
           <button className="signin-btn">Sign In</button>
-          <div className="sign-up-container">
-            <div className="sign-up-info">
-              <p>If You're new to OLX, click</p>
-            </div>
-            <div className="sign-up-button">
-              <button onClick={toggleSignUp}>Create An Account</button>
-            </div>
-          </div>
-          <div className="message">
-            <small>
-              Your email is never shared with external parties nor do we use it
-              to spam you in any way.
-            </small>
-          </div>
         </form>
+        <div className="sign-up-container">
+          <div className="sign-up-info">
+            <p>If You're new to OLX, click</p>
+          </div>
+          <div className="sign-up-button">
+            <button onClick={toggleSignUp}>Create An Account</button>
+          </div>
+        </div>
+        <div className="message">
+          <small>
+            Your email is never shared with external parties nor do we use it to
+            spam you in any way.
+          </small>
+        </div>
       </div>
     </div>
   );

@@ -2,9 +2,21 @@ import "./signup.css";
 import { AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+// import { FirebaseContext } from "../../store/FirebaseContext";
+import { db } from "../../firebase-backend/config";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  updateProfile,
+} from "firebase/auth";
+import { addDoc, collection } from "firebase/firestore";
 
 const Signup = () => {
   const navigate = useNavigate();
+
+  // const { app } = useContext(FirebaseContext);
+
+  const auth = getAuth();
 
   const [data, setData] = useState({});
   const [show, setShow] = useState(true);
@@ -21,7 +33,22 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(data);
+    createUserWithEmailAndPassword(auth, data.email, data.password)
+      .then((cred) => {
+        // credentials.user.updateProfile({ displayName: data.username });   OR
+        const users = cred.user;
+        // const id = cred.user.uid;
+        // users.displayName = data.username;    OR
+        updateProfile(users, { displayName: data.username });
+        addDoc(collection(db, "users"), {
+          id: cred.user.uid,
+          username: data.username,
+          email: data.email,
+        });
+      })
+      .then(() => {
+        navigate("/signin");
+      });
   };
 
   if (!show) {
@@ -52,6 +79,14 @@ const Signup = () => {
               onChange={handleClick}
             />
           </div>
+          <div className="email__input">
+            <input
+              type="text"
+              name="username"
+              placeholder="username"
+              onChange={handleClick}
+            />
+          </div>
           <div className="password__input">
             <input
               type="password"
@@ -60,14 +95,14 @@ const Signup = () => {
               onChange={handleClick}
             />
           </div>
-          <div className="password__input">
+          {/* <div className="password__input">
             <input
               type="password"
               name="confirmpassword"
               placeholder="Confirm Password"
               onChange={handleClick}
             />
-          </div>
+          </div> */}
           <button className="signin-btn">Sign Up</button>
           <div className="message">
             <small>
