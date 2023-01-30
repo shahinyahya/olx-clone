@@ -3,9 +3,12 @@ import { AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
 import Signup from "../signup/Signup";
 import { useNavigate } from "react-router-dom";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const Signin = () => {
   const navigate = useNavigate();
+
+  const auth = getAuth();
 
   const [data, setData] = useState({});
   const [show, setShow] = useState(true);
@@ -28,7 +31,12 @@ const Signin = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(data);
+
+    signInWithEmailAndPassword(auth, data.email, data.password)
+      .then(() => {
+        navigate("/");
+      })
+      .catch((err) => alert(err.message));
   };
 
   if (!show) {

@@ -1,8 +1,8 @@
 import "./signup.css";
 import { AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-// import { FirebaseContext } from "../../store/FirebaseContext";
+import { useNavigate, Link } from "react-router-dom";
+// import { FirebaseContext } from "../../store/Contexts";
 import { db } from "../../firebase-backend/config";
 import {
   createUserWithEmailAndPassword,
@@ -34,13 +34,13 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, data.email, data.password)
-      .then((cred) => {
+      .then(async (cred) => {
         // credentials.user.updateProfile({ displayName: data.username });   OR
         const users = cred.user;
         // const id = cred.user.uid;
         // users.displayName = data.username;    OR
-        updateProfile(users, { displayName: data.username });
-        addDoc(collection(db, "users"), {
+        await updateProfile(users, { displayName: data.username });
+        await addDoc(collection(db, "users"), {
           id: cred.user.uid,
           username: data.username,
           email: data.email,
@@ -104,6 +104,9 @@ const Signup = () => {
             />
           </div> */}
           <button className="signin-btn">Sign Up</button>
+          <span className="message">
+            Go back to <Link to="/signin">SignIn</Link>
+          </span>
           <div className="message">
             <small>
               Your email is never shared with external parties nor do we use it

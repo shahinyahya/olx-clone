@@ -1,11 +1,17 @@
 import "./header.css";
 import { AiOutlineSearch, AiOutlinePlus } from "react-icons/ai";
 import { IoIosArrowDown } from "react-icons/io";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Signin from "../signin/Signin";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../store/Contexts";
+import { getAuth, signOut } from "firebase/auth";
 
 const Header = () => {
+  const { user } = useContext(AuthContext);
+
+  const auth = getAuth();
+
   const navigate = useNavigate();
 
   const [data, setData] = useState({});
@@ -25,6 +31,12 @@ const Header = () => {
   if (modal) {
     document.body.style.overflow = "hidden";
   }
+
+  const handleLogOut = () => {
+    signOut(auth)
+      .then(() => navigate("/signin"))
+      .catch((err) => alert(err.message));
+  };
 
   return (
     <>
@@ -66,9 +78,16 @@ const Header = () => {
             </p>
           </div>
           <div className="login" onClick={() => login()}>
-            <p>Login</p>
+            <p>{user ? "Hello " + user.displayName : "Login"}</p>
             <div className="underline"></div>
           </div>
+
+          {user && (
+            <div className="logout__btn">
+              <button onClick={handleLogOut}>LogOut</button>
+            </div>
+          )}
+
           <div className="sell__btn">
             <button>
               <AiOutlinePlus className="plus" /> SELL

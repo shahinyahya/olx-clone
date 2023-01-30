@@ -95,7 +95,7 @@
 
 .underline {
   background-color: #002f34;
-  width: 38px;
+  width: 100%;
   height: 2px;
   border-radius: 25px;
 }
@@ -115,6 +115,18 @@
   border-right: 4px solid #3a77ff;
   background-color: #fff;
   font-weight: 800;
+}
+
+.logout__btn button {
+  border-radius: 25px;
+  padding: 0.55rem;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  font-weight: 800;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .plus {
