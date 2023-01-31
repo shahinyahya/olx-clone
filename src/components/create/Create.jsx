@@ -49,6 +49,7 @@ const Create = () => {
             price: data.price,
             url: downloadLink,
             userId: user.uid,
+            id: new Date().toUTCString(),
             createdAt: new Date().toDateString(),
           });
         });
