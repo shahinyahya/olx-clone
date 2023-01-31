@@ -1,24 +1,39 @@
 import "./posts.css";
-import post from "../../postDataRaw";
+// import post from "../../postDataRaw";
 import { AiOutlineHeart } from "react-icons/ai";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase-backend/config";
 
 const Posts = () => {
   const [toggleLike, setToggleLike] = useState(false);
+  const [products, setProducts] = useState([]);
 
   const handleClick = () => {
     setToggleLike(!toggleLike);
   };
 
+  useEffect(() => {
+    getDocs(collection(db, "products")).then((snapshot) => {
+      const allPost = snapshot.docs.map((product) => {
+        return {
+          ...product.data(),
+          id: product.id,
+        };
+      });
+      setProducts(allPost);
+    });
+  }, []);
+
   return (
     <div className="posts__container">
       <p className="posts-head">Fresh Reccomendations</p>
       <div className="card__container">
-        {post.map((data) => {
+        {products.map((data) => {
           return (
-            <div className="post__card" key={data.id}>
+            <div className="post__card" key={data.userId}>
               <div className="top-post__container">
-                <img src={data.image} alt="post" width="200" height="150" />
+                <img src={data.url} alt="post" width="200" height="150" />
                 <AiOutlineHeart
                   onClick={handleClick}
                   className={toggleLike ? "heart-active" : "heart-icon"}
@@ -29,17 +44,17 @@ const Posts = () => {
                   <strong>{data.price}</strong>
                 </div>
                 <div className="year-mileage">
-                  <p>{data.model}</p>
+                  <p>{data.category}</p>
                 </div>
                 <div className="product-name">
                   <p>{data.name}</p>
                 </div>
                 <div className="location">
                   <div className="place">
-                    <small>{data.place}</small>
+                    <small>{}</small>
                   </div>
                   <div className="date">
-                    <small>{data.date}</small>
+                    <small>{data.createdAt}</small>
                   </div>
                 </div>
               </div>

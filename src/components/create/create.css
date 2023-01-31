@@ -71,3 +71,26 @@
 .submit-btn__fill button:hover {
   scale: 0.89;
 }
+
+.home-page-link {
+  color: #002f34;
+  opacity: 0.95;
+  margin-top: 1.5rem;
+}
+
+.home-link {
+  text-decoration: none;
+  color: #002f34;
+}
+
+.home-link:hover {
+  text-decoration: underline;
+}
+
+.home-link:active {
+  color: blue;
+}
+
+img {
+  object-fit: cover;
+}

@@ -38,6 +38,14 @@ const Header = () => {
       .catch((err) => alert(err.message));
   };
 
+  const handleSell = () => {
+    if (user) {
+      navigate("/create");
+    } else {
+      navigate("/signin");
+    }
+  };
+
   return (
     <>
       <header className="header">
@@ -89,7 +97,7 @@ const Header = () => {
           )}
 
           <div className="sell__btn">
-            <button>
+            <button onClick={handleSell}>
               <AiOutlinePlus className="plus" /> SELL
             </button>
           </div>
