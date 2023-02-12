@@ -92,7 +92,7 @@ const Create = () => {
               <input
                 type="file"
                 onChange={(e) => {
-                  setPhoto(e.target.files[0]);
+                  setPhoto(URL.createObjectURL(e.target.files[0]));
                 }}
               />
             </div>
