@@ -49,7 +49,7 @@ const Posts = () => {
               <div className="top-post__container">
                 <img src={product.url} alt="post" width="200" height="150" />
                 <AiOutlineHeart
-                  onClick={handleClick}
+                  onClick={() => handleClick}
                   className={toggleLike ? "heart-active" : "heart-icon"}
                 />
               </div>
