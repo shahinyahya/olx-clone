@@ -1,3 +1,0 @@
-[submodule "src/firebase-backend"]
-    path = src/firebase-backend
-    url = git://github.com/shahinyahya/olx-clone
